@@ -947,10 +947,25 @@
             color: var(--white);
             text-decoration: none;
             transition: var(--transition);
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .contact-card a:hover {
-            text-decoration: underline;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-card a:active {
+            transform: translateY(-1px);
         }
 
         /* Footer */
@@ -1199,8 +1214,9 @@
             nav {
                 flex-direction: column;
                 gap: 15px;
-                align-items: center;
+                align-items: stretch;
                 padding: 15px 10px;
+                width: 100%;
             }
 
             /* Logo mobile */
@@ -1208,6 +1224,7 @@
                 font-size: 18px;
                 padding: 6px 14px;
                 gap: 10px;
+                align-self: center;
             }
 
             .logo-img {
@@ -1223,15 +1240,16 @@
             }
 
             .nav-links {
-                gap: 10px 15px;
+                gap: 10px;
                 justify-content: center;
                 width: 100%;
-                padding: 0 10px;
+                padding: 0;
+                flex-wrap: wrap;
             }
 
             .nav-links a {
                 font-size: 14px;
-                padding: 10px 15px;
+                padding: 12px 20px;
                 background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(255, 107, 53, 0.15));
                 border-radius: 12px;
                 box-shadow: 0 2px 8px rgba(255,140,0,0.2);
@@ -1239,6 +1257,10 @@
                 border: 1px solid rgba(255,140,0,0.2);
                 position: relative;
                 overflow: hidden;
+                flex: 1 1 calc(33.333% - 10px);
+                min-width: 100px;
+                max-width: 150px;
+                text-align: center;
             }
 
             .nav-links a::before {
@@ -1335,6 +1357,17 @@
             .contact-card {
                 padding: 25px;
                 border-radius: 18px;
+            }
+
+            /* Contact card links mobile */
+            .contact-card a {
+                padding: 14px 25px;
+                font-size: 18px;
+                margin-top: 15px;
+            }
+
+            .contact-card a:active {
+                transform: translateY(0) scale(0.97);
             }
 
             .service-card:active {
@@ -1467,12 +1500,15 @@
             }
 
             .nav-links {
-                gap: 8px 12px;
+                gap: 8px;
             }
 
             .nav-links a {
                 font-size: 13px;
-                padding: 8px 12px;
+                padding: 10px 15px;
+                flex: 1 1 calc(50% - 8px);
+                min-width: 90px;
+                max-width: none;
             }
 
             /* Sections mobile small */
@@ -1779,12 +1815,14 @@
             }
 
             .nav-links {
-                gap: 6px 10px;
+                gap: 6px;
             }
 
             .nav-links a {
                 font-size: 12px;
-                padding: 7px 10px;
+                padding: 9px 12px;
+                flex: 1 1 calc(50% - 6px);
+                min-width: 80px;
             }
 
             /* Sections ultra small */
@@ -2264,7 +2302,7 @@
     <section id="contact">
         <h2>צור קשר</h2>
         <p style="text-align: center; margin-bottom: 40px; color: #666; font-size: 18px;">
-            זמינים עבורכם בכל שעה - ניתן ליצור קשר בטלפון או בWhatsApp
+            זמינים עבורכם בכל שעה - ניתן ליצור קשר בטלפון או בווצאפ
         </p>
         <div class="contact-info">
             <div class="contact-card">
