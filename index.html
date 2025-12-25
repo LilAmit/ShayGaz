@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="שי בן חלילי - טכנאי גז מוסמך באזור השרון וגוש דן. שירותי גז מקצועיים, בדיקות תקופתיות, התקנות ותיקונים.">
+    <meta name="keywords" content="טכנאי גז, אזור השרון, גוש דן, בדיקת גז, התקנת גז, תיקון גז, טכנאי גז מוסמך">
+    <title>שי בן חלילי - טכנאי גז מוסמך | אזור השרון וגוש דן</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Geometric Background -->
+    <div class="geometric-bg">
+        <div class="geo-shape geo-circle-1"></div>
+        <div class="geo-shape geo-circle-2"></div>
+        <div class="geo-shape geo-square"></div>
+    </div>
+
+    <!-- Accessibility Float Button -->
+    <div class="accessibility-float-btn" onclick="toggleAccessibilityPanel()" aria-label="תפריט נגישות" role="button" tabindex="0">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 6c-2.61.7-5.67 1-8.5 1s-5.89-.3-8.5-1L3 8c1.86.5 4 .83 6 1v13h2v-6h2v6h2V9c2-.17 4.14-.5 6-1l-.5-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+        </svg>
+    </div>
+
+    <!-- Accessibility Overlay -->
+    <div class="accessibility-overlay" id="accessibilityOverlay" onclick="closeAccessibilityPanel()"></div>
+
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <div class="accessibility-panel-header">
+            <h2>תפריט נגישות</h2>
+            <button class="accessibility-close-btn" onclick="closeAccessibilityPanel()" aria-label="סגור תפריט">×</button>
+        </div>
+
+        <div class="accessibility-section">
+            <h3>גודל טקסט</h3>
+            <button class="accessibility-btn" onclick="setFontSize(110)" id="font110">
+                <span>הגדל טקסט +10%</span>
+                <span class="icon">A+</span>
+            </button>
+            <button class="accessibility-btn" onclick="setFontSize(120)" id="font120">
+                <span>הגדל טקסט +20%</span>
+                <span class="icon">A++</span>
+            </button>
+            <button class="accessibility-btn" onclick="setFontSize(130)" id="font130">
+                <span>הגדל טקסט +30%</span>
+                <span class="icon">A+++</span>
+            </button>
+            <button class="accessibility-btn" onclick="setFontSize(140)" id="font140">
+                <span>הגדל טקסט +40%</span>
+                <span class="icon">A++++</span>
+            </button>
+            <button class="accessibility-btn" onclick="setFontSize(100)" id="font100">
+                <span>גודל טקסט רגיל</span>
+                <span class="icon">A</span>
+            </button>
+        </div>
+
+        <div class="accessibility-section">
+            <h3>ניגודיות ותצוגה</h3>
+            <button class="accessibility-btn" onclick="toggleContrast()" id="contrastBtn">
+                <span>ניגודיות גבוהה</span>
+                <span class="icon">◐</span>
+            </button>
+            <button class="accessibility-btn" onclick="toggleGrayscale()" id="grayscaleBtn">
+                <span>גווני אפור</span>
+                <span class="icon">◯</span>
+            </button>
+        </div>
+
+        <div class="accessibility-section">
+            <h3>קריאות משופרת</h3>
+            <button class="accessibility-btn" onclick="toggleUnderlineLinks()" id="underlineBtn">
+                <span>הדגש קישורים</span>
+                <span class="icon">🔗</span>
+            </button>
+            <button class="accessibility-btn" onclick="toggleReadableFont()" id="fontBtn">
+                <span>גופן קריא</span>
+                <span class="icon">📝</span>
+            </button>
+            <button class="accessibility-btn" onclick="toggleLineHeight()" id="lineHeightBtn">
+                <span>מרווח שורות מוגבר</span>
+                <span class="icon">≡</span>
+            </button>
+            <button class="accessibility-btn" onclick="toggleLetterSpacing()" id="letterSpacingBtn">
+                <span>מרווח אותיות מוגבר</span>
+                <span class="icon">A B C</span>
+            </button>
+        </div>
+
+        <div class="accessibility-section">
+            <h3>איפוס</h3>
+            <button class="accessibility-btn" onclick="resetAccessibility()" style="background: #dc3545;">
+                <span>אפס את כל ההגדרות</span>
+                <span class="icon">↺</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="לוגו שי בן חלילי טכנאי גז" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">שי בן חלילי</span>
+                    <span class="logo-subtitle">טכנאי גז מוסמך</span>
+                </div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">בית</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#credentials">הסמכות</a></li>
+                <li><a href="#gallery">גלריה</a></li>
+                <li><a href="#testimonials">המלצות</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>שי בן חלילי</h1>
+            <p class="subtitle">טכנאי גז מוסמך ומקצועי</p>
+            <p>שירותי גז איכותיים ומקצועיים באזור השרון וגוש דן | זמינות מיידית | ניסיון של מעל 20 שנה</p>
+            <div class="cta-buttons">
+                <a href="tel:053-2302248" class="btn btn-primary">
+                    📞 התקשר עכשיו
+                </a>
+                <a href="https://wa.me/972532302248" target="_blank" class="btn btn-whatsapp">
+                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: white;">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    שלח הודעת ווצאפ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>אודות שי בן חלילי</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    שלום, אני שי בן חלילי, טכנאי גז מוסמך ומנוסה עם ניסיון של מעל 20 שנה בתחום. 
+                    אני מספק שירותי גז מקצועיים ואיכותיים לבתים פרטיים ודירות באזור השרון וגוש דן.
+                </p>
+                <p>
+                    המקצועיות, האמינות והשירות האישי שלי הפכו אותי לבחירה המועדפת של אלפי לקוחות מרוצים.
+                    אני מאמין בעבודה מדויקת, שירות אדיב וזמינות מיידית לכל בעיה או שאלה.
+                </p>
+                <p>
+                    כל עבודה שאני מבצע נעשית תוך שמירה על תקני הבטיחות הגבוהים ביותר ובאמצעות 
+                    ציוד מתקדם ומודרני. אני דואג שכל לקוח יקבל שירות מקצועי, מהיר ובמחיר הוגן.
+                </p>
+            </div>
+            <div class="about-features">
+                <div class="about-feature">
+                    <div class="about-feature-icon">✅</div>
+                    <div class="about-feature-text">
+                        <h4>ניסיון עשיר</h4>
+                        <p>מעל 20 שנות ניסיון בתחום</p>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <div class="about-feature-icon">🎓</div>
+                    <div class="about-feature-text">
+                        <h4>מוסמך ומקצועי</h4>
+                        <p>הסמכות מלאות ותעודות מוכרות</p>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <div class="about-feature-icon">⚡</div>
+                    <div class="about-feature-text">
+                        <h4>זמינות מיידית</h4>
+                        <p>מענה מהיר ושירות חירום</p>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <div class="about-feature-icon">💯</div>
+                    <div class="about-feature-text">
+                        <h4>שירות איכותי</h4>
+                        <p>מחויבות למצוינות בכל עבודה</p>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <div class="about-feature-icon">🔒</div>
+                    <div class="about-feature-text">
+                        <h4>בטיחות מירבית</h4>
+                        <p>עבודה לפי תקני בטיחות מחמירים</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>השירותים שלנו</h2>
+        
+        <!-- Important Notice -->
+        <div style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2); border-right: 5px solid var(--primary-color); padding: 25px 30px; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.2);">
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <div style="font-size: 48px;">⚠️</div>
+                <div style="flex: 1; min-width: 250px;">
+                    <h3 style="color: var(--primary-color); font-size: 22px; margin-bottom: 10px; font-weight: bold;">שימו לב - הודעה חשובה</h3>
+                    <p style="font-size: 18px; color: #333; line-height: 1.6; margin: 0;">
+                        <strong>אני לא מוכר בלוני גז.</strong> אני מספק שירותי טכנאות גז מקצועיים בלבד - התקנות, בדיקות, תיקונים ותחזוקה של מערכות גז.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🔧 התקנת מערכות גז</h3>
+                <p>התקנה מקצועית של מערכות גז לבתים פרטיים, תוך שמירה על תקני בטיחות מחמירים ושימוש בציוד איכותי ומתקדם</p>
+            </div>
+            <div class="service-card">
+                <h3>💧 התקנת מחממי מים</h3>
+                <p>התקנה מקצועית של מחממי מים, תיקון ותחזוקה שוטפת, תוך הקפדה על בטיחות ואיכות מקסימלית</p>
+            </div>
+            <div class="service-card">
+                <h3>🔍 בדיקות תקופתיות</h3>
+                <p>ביצוע בדיקות גז תקופתיות מקצועיות ומסירת תעודות בטיחות מוסמכות בהתאם לדרישות החוק והרשויות</p>
+            </div>
+            <div class="service-card">
+                <h3>⚙️ תיקונים ותחזוקה</h3>
+                <p>תיקון תקלות, תחזוקה שוטפת ושדרוג מערכות גז קיימות באמצעות חלקי חילוף מקוריים ואיכותיים</p>
+            </div>
+            <div class="service-card">
+                <h3>🏠 ייעוץ מקצועי</h3>
+                <p>ייעוץ מקצועי וחינם לבחירת המערכת המתאימה ביותר לצרכים שלכם, כולל הצעת פתרונות חסכוניים</p>
+            </div>
+            <div class="service-card">
+                <h3>🚨 שירות חירום</h3>
+                <p>זמינות מיידית לטיפול בתקלות דחופות ומצבי חירום - אנחנו כאן בשבילכם 24/7</p>
+            </div>
+            <div class="service-card">
+                <h3>📋 אישורים ותיעוד</h3>
+                <p>הכנת תיעוד מלא ומקצועי ואישורים נדרשים לרשויות, ביטוח ומשכנתאות</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section id="credentials">
+        <h2>הסמכות ותעודות מקצועיות</h2>
+        <p style="text-align: center; color: #666; font-size: 18px; margin-bottom: 20px;">
+            מקצועיות מוכחת עם הסמכות מלאות מהמוסדות המובילים בארץ
+        </p>
+        <div class="credentials-grid">
+            <div class="credential-card midrag-card">
+                <h3>כרטיס מדרג מוסמך</h3>
+                <p style="margin-bottom: 20px;">הסמכה מקצועית מלאה מטעם המוסד למדרג תעשייתי</p>
+                <div class="midrag-iframe-container">
+                    <iframe 
+                        src="https://www.midrag.co.il/SpCard/Sp/46110?sectorId=20&listId=2" 
+                        title="כרטיס מדרג - שי בן חלילי"
+                        class="midrag-iframe"
+                        loading="lazy"
+                        scrolling="yes">
+                    </iframe>
+                </div>
+                <a href="https://www.midrag.co.il/SpCard/Sp/46110?sectorId=20&listId=2" target="_blank" class="midrag-link">
+                    🔗 פתח בחלון חדש
+                </a>
+            </div>
+            <div class="credential-card">
+                <img src="diploma.jpg" alt="תעודת הוכרה והצטיינות - שי בן חלילי">
+                <h3>תעודת הוכרה והצטיינות</h3>
+                <p>הכרה רסמית במקצועיות יוצאת דופן ובאיכות העבודה הגבוהה</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>גלריית עבודות</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: #666; font-size: 18px;">
+            דוגמאות לעבודות שבוצעו בשטח עם מקצועיות, דיוק ואיכות גבוהה
+        </p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="work1.jpg" alt="עבודת טכנאות גז מקצועית - התקנת מערכת גז בבית פרטי">
+                <div class="overlay">
+                    <h3>התקנה מקצועית</h3>
+                    <p>התקנת מערכת גז מלאה בבית פרטי תוך שמירה על תקני בטיחות</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="work2.jpg" alt="עבודת טכנאות גז - בדיקה תקופתית ותחזוקה">
+                <div class="overlay">
+                    <h3>בדיקה ותחזוקה</h3>
+                    <p>בדיקה תקופתית מקיפה ותחזוקה שוטפת למערכת גז</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="work3.jpg" alt="עבודת טכנאות גז - תיקון ושדרוג מערכת">
+                <div class="overlay">
+                    <h3>תיקון ושדרוג</h3>
+                    <p>תיקון תקלה ושדרוג מערכת גז קיימת לתקן החדש</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>מה הלקוחות שלנו אומרים</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: #666; font-size: 18px;">
+            המלצות מאלפי לקוחות מרוצים שקיבלו שירות מעולה
+        </p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">
+                        "שי הגיע במהירות, אבחן את הבעיה מיד ותיקן אותה בצורה מקצועית. 
+                        השירות היה מעולה והמחיר הוגן. ממליץ בחום!"
+                    </p>
+                    <p class="testimonial-author">יוסי כהן, הוד השרון</p>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">
+                        "מקצועי, אמין וזמין. שי ביצע לנו בדיקת גז שנתית וגיליתי שהוא 
+                        באמת דואג לבטיחות הלקוח. תודה רבה!"
+                    </p>
+                    <p class="testimonial-author">רונית לוי, רעננה</p>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">
+                        "התקנו מערכת גז חדשה בבית. שי הסביר הכל בסבלנות, 
+                        העבודה הייתה מדויקת והתוצאה מושלמת. שירות ברמה הכי גבוהה!"
+                    </p>
+                    <p class="testimonial-author">דוד מזרחי, כפר סבא</p>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>צור קשר</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #666; font-size: 18px;">
+            זמינים עבורכם בכל שעה - ניתן ליצור קשר בטלפון או בווצאפ
+        </p>
+        <div class="contact-info">
+            <div class="contact-card">
+                <div class="contact-card-icon">📞</div>
+                <h3>טלפון</h3>
+                <p><a href="tel:053-2302248">053-2302248</a></p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-icon">
+                    <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: white;">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                </div>
+                <h3>ווצאפ</h3>
+                <p><a href="https://wa.me/972532302248" target="_blank">שלח הודעה</a></p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-icon">📍</div>
+                <h3>איזור שירות</h3>
+                <p>אזור השרון וגוש דן</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p style="font-size: 18px; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">
+            שי בן חלילי - טכנאי גז מוסמך
+        </p>
+        <p>&copy; 2026 כל הזכויות שמורות</p>
+        <p>אזור השרון וגוש דן | טלפון: <a href="tel:053-2302248">053-2302248</a></p>
+        <div class="footer-social">
+            <a href="https://wa.me/972532302248" target="_blank" title="WhatsApp" aria-label="צור קשר ב-WhatsApp" class="whatsapp-icon">
+                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+            <a href="tel:053-2302248" title="טלפון" aria-label="התקשר אלינו" class="phone-icon">
+                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/972532302248" target="_blank" class="floating-btn whatsapp" title="שלח הודעת WhatsApp" aria-label="שלח הודעת WhatsApp">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+        <a href="tel:053-2302248" class="floating-btn phone" title="התקשר עכשיו" aria-label="התקשר עכשיו">
+            <svg viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="חזור למעלה">
+        ↑
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
