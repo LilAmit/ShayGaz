@@ -693,7 +693,7 @@ h2::after {
 }
 
 .credential-card:hover {
-    transform: scale(1.08) rotate(2deg);
+    transform: scale(1.08);
     box-shadow: 0 15px 40px rgba(255, 140, 0, 0.3);
     border-color: var(--secondary-color);
 }
