@@ -1218,11 +1218,17 @@ footer a:hover {
 
 @media (max-width: 768px) {
 
+
     .hero-logo {
+        width: 90%;
+        max-width: 500px;
         height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
+        aspect-ratio: 1;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
     }
+
     body {
         font-size: 16px;
         -webkit-text-size-adjust: 100%;
@@ -1381,9 +1387,6 @@ footer a:hover {
         max-width: 100%;
     }
 
-    .hero-logo {
-        height: 140px;
-    }
 
     .hero h1 {
         font-size: 36px;
@@ -1575,11 +1578,15 @@ footer a:hover {
 
 @media (max-width: 480px) {
 
+
     .hero-logo {
+        width: 85%;
+        max-width: 350px;
         height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
+        aspect-ratio: 1;
+        object-fit: contain;
     }
+
     .geo-circle-1 {
         width: 150px;
         height: 150px;
@@ -1607,9 +1614,6 @@ footer a:hover {
         border-radius: 18px;
     }
 
-    .hero-logo {
-        height: 70px;
-    }
 
     .hero h1 {
         font-size: 28px;
