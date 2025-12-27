@@ -207,3 +207,124 @@ window.addEventListener('load', function() {
     document.body.appendChild(announcement);
     setTimeout(() => announcement.remove(), 1000);
 });
+
+// Chatbot functionality
+const chatbotKnowledge = {
+    'מה השירותים שאתם מציעים?': `אנחנו מציעים מגוון שירותי גז מקצועיים:
+        
+🔧 התקנת מערכות גז
+💧 התקנת מחממי מים
+🔍 בדיקות תקופתיות
+⚙️ תיקונים ותחזוקה
+🏠 ייעוץ מקצועי
+🚨 שירות חירום 24/7
+📋 אישורים ותיעוד`,
+    
+    'באיזה אזורים אתם משרתים?': `אנחנו משרתים את כל אזור השרון וגוש דן! 📍
+
+כולל: הוד השרון, רעננה, כפר סבא, רמת השרון, הרצליה, תל אביב, פתח תקווה, נתניה ועוד!`,
+    
+    'כמה ניסיון יש לכם?': `יש לנו מעל 20 שנה של ניסיון בתחום! 🎓
+
+✅ טכנאי גז מוסמך ומקצועי
+✅ הסמכות מלאות מהמוסד למדרג
+✅ תעודת הוכרה והצטיינות
+✅ אלפי לקוחות מרוצים`,
+    
+    'איך ליצור קשר?': `ניתן ליצור קשר בכמה דרכים:
+
+📞 טלפון: <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold; text-decoration: underline;">053-2302248 ← לחץ כאן להתקשר</a>
+
+💬 ווצאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold; text-decoration: underline;">לחץ כאן לשליחת הודעה בווצאפ ←</a>
+
+⏰ זמינים 24/7 גם בשבת!`,
+    
+    'כמה עולה השירות?': `המחירים משתנים לפי סוג השירות:
+
+💰 המחיר מותאם לכל עבודה
+✅ מחירים הוגנים ושקופים
+📞 התקשר לקבלת הצעת מחיר: 053-2302248`,
+    
+    'מתי צריך לעשות בדיקת גז?': `בדיקת גז תקופתית:
+
+✅ חובה על פי חוק
+⏰ מומלץ אחת לשנה
+📋 כולל תעודת בטיחות
+🔍 בדיקה מקיפה של כל המערכת`,
+    
+    'יש שירות חירום?': `⚠️ במקרה חירום:
+
+1️⃣ סגור את הברז הראשי
+2️⃣ פתח חלונות
+3️⃣ התקשר מיד: 053-2302248
+🚨 זמינים 24/7!`,
+    
+    'אתם מתקינים מחממי מים?': `התקנת מחממי מים:
+
+💧 התקנה מקצועית
+🔧 תיקון ותחזוקה
+✅ כל סוגי המחממים
+📞 התקשר: 053-2302248`
+};
+
+function toggleChatbot() {
+    const chatbot = document.getElementById('chatbotWindow');
+    chatbot.classList.toggle('active');
+}
+
+function askQuestion(question) {
+    // Add user message
+    addMessage(question, 'user');
+    
+    // Show typing indicator
+    showTypingIndicator();
+    
+    // Get bot response after delay
+    setTimeout(() => {
+        hideTypingIndicator();
+        const response = chatbotKnowledge[question] || 'מצטער, לא מצאתי תשובה לשאלה זו.';
+        addMessage(response, 'bot');
+    }, 800);
+}
+
+function addMessage(text, sender) {
+    const messagesContainer = document.getElementById('chatbotMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}`;
+    
+    const avatar = sender === 'bot' ? '🤖' : '👤';
+    
+    messageDiv.innerHTML = `
+        <div class="message-avatar">${avatar}</div>
+        <div class="message-content">
+            <p>${text.replace(/\n/g, '<br>')}</p>
+        </div>
+    `;
+    
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function showTypingIndicator() {
+    const messagesContainer = document.getElementById('chatbotMessages');
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'chat-message bot typing-message';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+        <div class="message-avatar">🤖</div>
+        <div class="message-content">
+            <div class="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+    `;
+    messagesContainer.appendChild(typingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function hideTypingIndicator() {
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
+}
