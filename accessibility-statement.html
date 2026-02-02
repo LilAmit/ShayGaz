@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="הצהרת נגישות - שי בן חלילי טכנאי גז מוסמך. אתר זה נגיש לבעלי מוגבלויות בהתאם לתקן הישראלי 5568.">
+    <meta name="keywords" content="הצהרת נגישות, נגישות אתר, תקן 5568, WCAG, טכנאי גז, שי בן חלילי">
+    <title>הצהרת נגישות | שי בן חלילי - טכנאי גז מוסמך</title>
+
+    <link rel="stylesheet" href="style.css?v=24">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .accessibility-statement-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .accessibility-statement-content h2 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .accessibility-statement-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .accessibility-statement-content h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+        }
+
+        .accessibility-statement-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .accessibility-statement-content ul li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+        }
+
+        .accessibility-statement-content ul li::before {
+            content: '\2713';
+            position: absolute;
+            right: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-right: 4px solid var(--primary-color);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .keyboard-shortcuts {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .keyboard-shortcuts table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .keyboard-shortcuts th,
+        .keyboard-shortcuts td {
+            padding: 12px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .keyboard-shortcuts th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .keyboard-shortcuts kbd {
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .contact-accessibility {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .contact-accessibility h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .contact-accessibility a {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+
+        .update-date {
+            background: #e8f5e9;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .update-date i {
+            color: #4caf50;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Geometric Background -->
+    <div class="geometric-bg">
+        <div class="geo-shape geo-circle-1"></div>
+        <div class="geo-shape geo-circle-2"></div>
+        <div class="geo-shape geo-square"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="header-contact-info">
+                <a href="tel:053-2302248" class="header-phone">
+                    <span class="phone-icon">📞</span>
+                    <span>053-2302248</span>
+                </a>
+                <span class="header-divider">|</span>
+                <span class="header-availability">זמינים 24/7</span>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">בית</a></li>
+                <li><a href="index.html#about">אודות</a></li>
+                <li><a href="index.html#services">שירותים</a></li>
+            </ul>
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="לוגו שי בן חלילי טכנאי גז" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">שי בן חלילי</span>
+                    <span class="logo-subtitle">טכנאי גז מוסמך</span>
+                </div>
+            </a>
+            <ul class="nav-links nav-links-left" id="navLinksLeft">
+                <li><a href="gallery.html">גלריית עבודות</a></li>
+                <li><a href="credentials.html">הסמכות ולקוחות</a></li>
+                <li><a href="index.html#contact">צור קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero" id="main-content" style="text-align: center;">
+        <h1 style="justify-content: center;"><i class="fa-solid fa-universal-access"></i> הצהרת נגישות</h1>
+        <p style="text-align: center;">מחויבים להנגשת האתר לכלל האוכלוסייה</p>
+    </section>
+
+    <!-- Content -->
+    <section class="accessibility-statement-content">
+        <div class="update-date">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div>
+                <strong>תאריך עדכון אחרון:</strong> ינואר 2026<br>
+                <small>הצהרה זו נבדקת ומתעדכנת באופן שוטף</small>
+            </div>
+        </div>
+
+        <h2><i class="fa-solid fa-bullseye"></i> מחויבותנו לנגישות</h2>
+        <p>
+            אנו מאמינים כי כל אדם זכאי לגישה שוויונית למידע ולשירותים, ללא קשר למוגבלות.
+            אתר זה עוצב ונבנה תוך הקפדה על עקרונות נגישות, בהתאם לתקן הישראלי 5568
+            ולהנחיות WCAG 2.0 ברמה AA.
+        </p>
+        <p>
+            השקענו מאמצים רבים כדי להבטיח שהאתר יהיה נגיש לאנשים עם מוגבלויות שונות,
+            כולל לקויות ראייה, שמיעה, מוטוריקה וקוגניציה.
+        </p>
+
+        <h2><i class="fa-solid fa-cogs"></i> תכונות הנגישות באתר</h2>
+        <p>האתר כולל מגוון רחב של כלי נגישות המאפשרים התאמה אישית לצרכי המשתמש:</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-headphones"></i> קורא מסך</h4>
+                <p>קורא מסך מובנה בעברית - לחץ על כל אלמנט כדי לשמוע את תוכנו</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-text-height"></i> גודל טקסט</h4>
+                <p>אפשרות להגדיל או להקטין את גודל הטקסט באתר (80%-150%)</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-moon"></i> מצב כהה</h4>
+                <p>מצב תצוגה כהה להפחתת עומס על העיניים</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-eye"></i> ניגודיות גבוהה</h4>
+                <p>מצב ניגודיות גבוהה צהוב-שחור לכבדי ראייה</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-font"></i> גופנים קריאים</h4>
+                <p>אפשרות לגופן קריא יותר או גופן מותאם לדיסלקציה</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-arrows-left-right"></i> מרווחים</h4>
+                <p>הגדלת מרווח שורות ומרווח אותיות לקריאה נוחה יותר</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-arrow-pointer"></i> סמן עכבר</h4>
+                <p>אפשרות לסמן גדול או סמן צבעוני לנראות טובה יותר</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-grip-lines"></i> סרגל קריאה</h4>
+                <p>סרגל קריאה העוקב אחרי העכבר לסיוע בקריאה</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-link"></i> הדגשת קישורים</h4>
+                <p>הדגשת כל הקישורים באתר לזיהוי קל</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-ban"></i> עצירת אנימציות</h4>
+                <p>אפשרות להשבית את כל האנימציות באתר</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-keyboard"></i> ניווט מקלדת</h4>
+                <p>ניווט מלא באתר באמצעות מקלדת בלבד</p>
+            </div>
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-eye-slash"></i> הסתרת תמונות</h4>
+                <p>אפשרות להסתיר תמונות וסרטונים לחיבור איטי או העדפה</p>
+            </div>
+        </div>
+
+        <h2><i class="fa-solid fa-keyboard"></i> קיצורי מקלדת</h2>
+        <p>ניתן להשתמש בקיצורי המקלדת הבאים לניווט מהיר:</p>
+
+        <div class="keyboard-shortcuts">
+            <table>
+                <thead>
+                    <tr>
+                        <th>קיצור</th>
+                        <th>פעולה</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><kbd>Alt</kbd> + <kbd>A</kbd></td>
+                        <td>פתיחה/סגירה של תפריט הנגישות</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>Alt</kbd> + <kbd>R</kbd></td>
+                        <td>איפוס כל הגדרות הנגישות</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>Escape</kbd></td>
+                        <td>סגירת תפריט הנגישות</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>Tab</kbd></td>
+                        <td>ניווט קדימה בין אלמנטים</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>Shift</kbd> + <kbd>Tab</kbd></td>
+                        <td>ניווט אחורה בין אלמנטים</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>←</kbd> חץ שמאלה</td>
+                        <td>ניווט קדימה (כמו Tab) - כשניווט מקלדת מופעל</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>→</kbd> חץ ימינה</td>
+                        <td>ניווט אחורה (כמו Shift+Tab) - כשניווט מקלדת מופעל</td>
+                    </tr>
+                    <tr>
+                        <td><kbd>Enter</kbd></td>
+                        <td>הפעלת כפתור או קישור</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2><i class="fa-solid fa-mobile-screen-button"></i> תאימות</h2>
+        <h3>דפדפנים נתמכים</h3>
+        <ul>
+            <li>Google Chrome (גרסה 90 ומעלה)</li>
+            <li>Mozilla Firefox (גרסה 88 ומעלה)</li>
+            <li>Microsoft Edge (גרסה 90 ומעלה)</li>
+            <li>Apple Safari (גרסה 14 ומעלה)</li>
+            <li>Samsung Internet (גרסה 14 ומעלה)</li>
+        </ul>
+
+        <h3>מכשירים</h3>
+        <ul>
+            <li>מחשבים שולחניים (Windows, Mac, Linux)</li>
+            <li>מחשבים ניידים</li>
+            <li>טאבלטים (iPad, Android tablets)</li>
+            <li>טלפונים חכמים (iPhone, Android)</li>
+        </ul>
+
+        <h3>טכנולוגיות מסייעות</h3>
+        <ul>
+            <li>קוראי מסך (NVDA, JAWS, VoiceOver, TalkBack)</li>
+            <li>תוכנות הגדלה</li>
+            <li>ניווט מקלדת</li>
+            <li>מכשירי הצבעה חלופיים</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-certificate"></i> תקנים ותאימות</h2>
+        <p>האתר נבנה בהתאם לתקנים הבאים:</p>
+        <ul>
+            <li>תקן ישראלי 5568 - נגישות אתרי אינטרנט</li>
+            <li>WCAG 2.0 Level AA - הנחיות נגישות לתוכן אינטרנט</li>
+            <li>WAI-ARIA - תכונות נגישות לאפליקציות אינטרנט</li>
+            <li>Section 508 - תקן נגישות אמריקאי</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-wrench"></i> מגבלות ידועות</h2>
+        <p>
+            למרות המאמצים הרבים, ייתכן שחלקים מסוימים באתר עדיין אינם נגישים במלואם.
+            אנו עובדים באופן מתמיד לשיפור הנגישות ולטיפול בבעיות שמתגלות.
+        </p>
+        <p>
+            אם נתקלתם בבעיית נגישות באתר, נשמח לשמוע מכם ולטפל בכך בהקדם.
+        </p>
+
+        <div class="contact-accessibility">
+            <h3><i class="fa-solid fa-envelope"></i> פניות בנושא נגישות</h3>
+            <p>
+                אם נתקלתם בבעיה או שיש לכם הצעות לשיפור נגישות האתר,
+                אנא צרו איתנו קשר:
+            </p>
+            <p>
+                <strong>📞 טלפון:</strong> <a href="tel:053-2302248">053-2302248</a><br>
+                <strong>💬 וואצאפ:</strong> <a href="https://wa.me/972532302248" target="_blank">לחץ כאן לשליחת הודעה</a>
+            </p>
+            <p>
+                אנו מתחייבים לטפל בפנייתכם תוך 5 ימי עסקים.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p style="font-size: 18px; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">
+            שי בן חלילי - טכנאי גז מוסמך
+        </p>
+        <p>&copy; 2026 כל הזכויות שמורות</p>
+        <p>אזור השרון וגוש דן | טלפון: <a href="tel:053-2302248">053-2302248</a></p>
+        <p style="margin-top: 10px;"><a href="accessibility-statement.html" style="color: #2196f3;">הצהרת נגישות</a></p>
+        <div class="footer-social">
+            <a href="https://wa.me/972532302248" target="_blank" title="WhatsApp" aria-label="צור קשר ב-WhatsApp" class="whatsapp-icon">
+                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+            <a href="tel:053-2302248" title="טלפון" aria-label="התקשר אלינו" class="phone-icon">
+                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:053-2302248" class="floating-btn phone" aria-label="התקשר עכשיו">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+        </a>
+        <a href="https://wa.me/972532302248" target="_blank" class="floating-btn whatsapp" aria-label="שלח הודעת וואצאפ">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+        <button class="floating-btn chatbot-trigger" onclick="toggleChatbot()" aria-label="פתח צ'אט">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+                <circle cx="8" cy="10" r="1.5"/>
+                <circle cx="12" cy="10" r="1.5"/>
+                <circle cx="16" cy="10" r="1.5"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">🤖</div>
+            <div class="chatbot-title">
+                <span>העוזר של שי גז</span>
+                <small>תמיד כאן לעזור!</small>
+            </div>
+            <button class="chatbot-close" onclick="toggleChatbot()" aria-label="סגור צ'אט">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chat-message bot">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>שלום! 👋<br>אני העוזר הווירטואלי של שי גז.<br>איך אפשר לעזור לך היום?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="הקלד הודעה..." onkeypress="handleChatInput(event)">
+            <button onclick="sendChatMessage()" aria-label="שלח הודעה">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="חזור למעלה">
+        ↑
+    </div>
+
+    <!-- Accessibility Widget -->
+    <!-- Skip Links -->
+    <div id="skipLinks" role="navigation" aria-label="קישורי דילוג">
+        <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+        <a href="javascript:void(0)" class="skip-link" onclick="document.querySelector('nav a, header a')?.focus()">דלג לתפריט ניווט</a>
+        <a href="#footer" class="skip-link">דלג לתחתית העמוד</a>
+    </div>
+
+    <!-- Accessibility Trigger Button -->
+    <button class="accessibility-trigger" id="accessibilityBtn" aria-label="פתח תפריט נגישות" title="נגישות - לחץ כאן">
+        <i class="fa-solid fa-universal-access"></i>
+    </button>
+
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <div class="accessibility-header">
+            <h2><i class="fa-solid fa-universal-access"></i> נגישות</h2>
+            <button class="accessibility-close" id="accessibilityClose" aria-label="סגור תפריט נגישות">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+
+        <div class="accessibility-content">
+            <!-- קורא מסך -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-volume-high"></i> קורא מסך</h3>
+                <button class="accessibility-btn" id="screenReaderBtn" title="קורא מסך - לחיקוק על טקסט כדי לשמוע אותו" aria-pressed="false">
+                    <i class="fa-solid fa-headphones"></i>
+                    הפעל קורא מסך
+                </button>
+                <div class="accessibility-buttons" style="margin-top: 10px">
+                    <button class="accessibility-btn-small" id="readerSpeedDownBtn" title="האט קריאה">
+                        <i class="fa-solid fa-backward"></i> איטי
+                    </button>
+                    <button class="accessibility-btn-small" id="readerSpeedUpBtn" title="האץ קריאה">
+                        <i class="fa-solid fa-forward"></i> מהיר
+                    </button>
+                </div>
+            </div>
+
+            <!-- גודל טקסט -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-text-height"></i> גודל טקסט</h3>
+                <div class="accessibility-buttons">
+                    <button class="accessibility-btn" id="increaseFontBtn" title="הגדל גופן" aria-pressed="false">
+                        <i class="fa-solid fa-plus"></i>
+                        הגדל טקסט
+                    </button>
+                    <button class="accessibility-btn" id="decreaseFontBtn" title="הקטן גופן" aria-pressed="false">
+                        <i class="fa-solid fa-minus"></i>
+                        הקטן טקסט
+                    </button>
+                </div>
+            </div>
+
+            <!-- מרווחים -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-arrows-left-right"></i> מרווחים</h3>
+                <div class="accessibility-buttons">
+                    <button class="accessibility-btn" id="lineHeightBtn" title="הגדל מרווח בין שורות" aria-pressed="false">
+                        <i class="fa-solid fa-align-justify"></i>
+                        מרווח שורות
+                    </button>
+                    <button class="accessibility-btn" id="letterSpacingBtn" title="הגדל מרווח בין אותיות" aria-pressed="false">
+                        <i class="fa-solid fa-text-width"></i>
+                        מרווח אותיות
+                    </button>
+                </div>
+            </div>
+
+            <!-- גופנים -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-font"></i> סוג גופן</h3>
+                <div class="accessibility-buttons">
+                    <button class="accessibility-btn" id="readableFontBtn" title="גופן קריא" aria-pressed="false">
+                        <i class="fa-solid fa-font"></i>
+                        גופן קריא
+                    </button>
+                    <button class="accessibility-btn" id="dyslexiaFontBtn" title="גופן לדיסלקציה" aria-pressed="false">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        גופן דיסלקציה
+                    </button>
+                </div>
+            </div>
+
+            <!-- ניגודיות וצבעים -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-palette"></i> צבעים וניגודיות</h3>
+                <div class="accessibility-buttons">
+                    <button class="accessibility-btn" id="darkContrastBtn" title="מצב כהה" aria-pressed="false">
+                        <i class="fa-solid fa-moon"></i>
+                        מצב כהה
+                    </button>
+                    <button class="accessibility-btn" id="highContrastYellowBtn" title="ניגודיות גבוהה" aria-pressed="false">
+                        <i class="fa-solid fa-eye"></i>
+                        ניגודיות גבוהה
+                    </button>
+                </div>
+                <button class="accessibility-btn" id="invertColorsBtn" title="הפוך צבעים" aria-pressed="false" style="margin-top: 8px">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    הפוך צבעים
+                </button>
+            </div>
+
+            <!-- סמן עכבר -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-computer-mouse"></i> סמן עכבר</h3>
+                <div class="accessibility-buttons">
+                    <button class="accessibility-btn" id="bigCursorBtn" title="סמן גדול" aria-pressed="false">
+                        <i class="fa-solid fa-arrow-pointer"></i>
+                        סמן גדול
+                    </button>
+                    <button class="accessibility-btn" id="cursorColorBtn" title="סמן צבעוני" aria-pressed="false">
+                        <i class="fa-solid fa-droplet"></i>
+                        סמן צבעוני
+                    </button>
+                </div>
+            </div>
+
+            <!-- כלי עזר לקריאה -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-book-open"></i> כלי עזר לקריאה</h3>
+                <button class="accessibility-btn" id="readingGuideBtn" title="סרגל קריאה - עוקב אחרי העכבר" aria-pressed="false">
+                    <i class="fa-solid fa-grip-lines"></i>
+                    סרגל קריאה
+                </button>
+            </div>
+
+            <!-- הדגשות -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-highlighter"></i> הדגשות</h3>
+                <button class="accessibility-btn" id="highlightLinksBtn" title="הדגש קישורים" aria-pressed="false">
+                    <i class="fa-solid fa-link"></i>
+                    הדגש קישורים
+                </button>
+            </div>
+
+            <!-- כיוון טקסט -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-compass"></i> ניווט והכוון</h3>
+                <button class="accessibility-btn" id="textDirectionBtn" title="שנה כיוון טקסט" aria-pressed="false">
+                    <i class="fa-solid fa-exchange-alt"></i>
+                    הפוך כיוון (LTR/RTL)
+                </button>
+            </div>
+
+            <!-- אנימציות -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-film"></i> אנימציות</h3>
+                <button class="accessibility-btn" id="stopAnimationsBtn" title="הפסק אנימציות" aria-pressed="false">
+                    <i class="fa-solid fa-ban"></i>
+                    עצור אנימציות
+                </button>
+            </div>
+
+            <!-- הסתרת מדיה -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-image"></i> תמונות וסרטונים</h3>
+                <button class="accessibility-btn" id="hideMediaBtn" title="הסתר תמונות וסרטונים" aria-pressed="false">
+                    <i class="fa-solid fa-eye-slash"></i>
+                    הסתר תמונות
+                </button>
+            </div>
+
+            <!-- ניווט מקלדת -->
+            <div class="accessibility-section">
+                <h3><i class="fa-solid fa-keyboard"></i> ניווט מקלדת</h3>
+                <button class="accessibility-btn" id="keyboardNavBtn" title="הפעל ניווט מקלדת מלא" aria-pressed="false">
+                    <i class="fa-solid fa-keyboard"></i>
+                    ניווט מקלדת מלא
+                </button>
+            </div>
+
+            <!-- איפוס -->
+            <div class="accessibility-section">
+                <button class="accessibility-reset-btn" id="resetAccessibilityBtn" title="אפס העדפות">
+                    <i class="fa-solid fa-undo"></i>
+                    אפס הכל
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reading Guide -->
+    <div id="readingGuide" style="display: none"></div>
+
+    <!-- Screen Reader Announcer -->
+    <div class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="srAnnouncer"></div>
+
+    <script src="script.js?v=8"></script>
+    <script src="accessibility-widget.js?v=1"></script>
+</body>
+</html>
