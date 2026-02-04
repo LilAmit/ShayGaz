@@ -177,6 +177,49 @@
     },
 
     enableScreenReaderListeners() {
+      // הוסף מאזינים להדגשה ויזואלית
+      this.screenReaderMouseover = (e) => {
+        const target = e.target;
+        if (!target || !target.classList) return;
+
+        // אל תסמן את פאנל הנגישות עצמו
+        if (target.closest('.accessibility-panel') || target.closest('.accessibility-trigger')) {
+          return;
+        }
+
+        // הוסף מחלקה ייעודית לאלמנט עם hover
+        target.classList.add('screen-reader-highlight');
+      };
+
+      this.screenReaderMouseout = (e) => {
+        const target = e.target;
+        if (!target || !target.classList) return;
+        target.classList.remove('screen-reader-highlight');
+      };
+
+      document.body.addEventListener('mouseover', this.screenReaderMouseover);
+      document.body.addEventListener('mouseout', this.screenReaderMouseout);
+
+      // הוסף גם מאזינים לפוקוס להדגשה ויזואלית
+      this.screenReaderFocusHighlight = (e) => {
+        const target = e.target;
+        if (!target || !target.classList) return;
+
+        if (target.closest('.accessibility-panel') || target.closest('.accessibility-trigger')) {
+          return;
+        }
+        target.classList.add('screen-reader-highlight');
+      };
+
+      this.screenReaderBlurHighlight = (e) => {
+        const target = e.target;
+        if (!target || !target.classList) return;
+        target.classList.remove('screen-reader-highlight');
+      };
+
+      document.addEventListener('focusin', this.screenReaderFocusHighlight, true);
+      document.addEventListener('focusout', this.screenReaderBlurHighlight, true);
+
       // פונקציית עזר לתיאור אלמנט
       const getElementDescription = (target) => {
         let textToRead = '';
@@ -277,6 +320,23 @@
       if (this.screenReaderFocusListener) {
         document.body.removeEventListener('focusin', this.screenReaderFocusListener);
       }
+      if (this.screenReaderMouseover) {
+        document.body.removeEventListener('mouseover', this.screenReaderMouseover);
+      }
+      if (this.screenReaderMouseout) {
+        document.body.removeEventListener('mouseout', this.screenReaderMouseout);
+      }
+      if (this.screenReaderFocusHighlight) {
+        document.removeEventListener('focusin', this.screenReaderFocusHighlight, true);
+      }
+      if (this.screenReaderBlurHighlight) {
+        document.removeEventListener('focusout', this.screenReaderBlurHighlight, true);
+      }
+
+      // הסר את כל המחלקות של הדגשה
+      document.querySelectorAll('.screen-reader-highlight').forEach(el => {
+        el.classList.remove('screen-reader-highlight');
+      });
     },
 
     speak(text, quiet = false) {
@@ -496,7 +556,14 @@
 
     changeTextSize(delta) {
       this.textSize = Math.max(80, Math.min(150, this.textSize + delta));
-      document.documentElement.style.fontSize = this.textSize + '%';
+
+      // הסרת מחלקות קודמות
+      document.body.classList.remove('text-size-80', 'text-size-90', 'text-size-100',
+        'text-size-110', 'text-size-120', 'text-size-130', 'text-size-140', 'text-size-150');
+
+      // הוספת מחלקה חדשה לפי הגודל
+      document.body.classList.add(`text-size-${this.textSize}`);
+
       this.announce(`גודל טקסט שונה ל-${this.textSize}%`);
       this.saveSettings();
     },
@@ -548,7 +615,6 @@
 
       // הסרת כל המחלקות
       document.body.className = '';
-      document.documentElement.style.fontSize = '';
       document.documentElement.setAttribute('dir', 'rtl');
 
       // איפוס משתנים
@@ -624,7 +690,11 @@
         const settings = JSON.parse(saved);
         document.body.className = settings.classes || '';
         this.textSize = settings.textSize || 100;
-        document.documentElement.style.fontSize = this.textSize + '%';
+
+        // אם יש שינוי בגודל הטקסט, הוסף את המחלקה המתאימה
+        if (this.textSize !== 100) {
+          document.body.classList.add(`text-size-${this.textSize}`);
+        }
 
         // טעינת מצב כפתורים
         if (settings.buttonStates) {

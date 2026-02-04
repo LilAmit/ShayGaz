@@ -49,20 +49,57 @@ window.addEventListener('load', function() {
 
 // Chatbot functionality
 const chatbotPatterns = [
+    // שאלות כלליות ובסיסיות
+    {
+        patterns: ['מה השעה', 'כמה השעה', 'שעה'],
+        response: () => {
+            const now = new Date();
+            const time = now.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' });
+            const date = now.toLocaleDateString('he-IL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            return `השעה כעת: ${time} ⏰
+התאריך: ${date} 📅
+
+📞 זמינים 24/7 - התקשר בכל עת: <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold;">053-2302248</a>`;
+        }
+    },
+    {
+        patterns: ['מה התאריך', 'איזה תאריך', 'תאריך היום'],
+        response: () => {
+            const now = new Date();
+            const date = now.toLocaleDateString('he-IL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            return `התאריך היום: ${date} 📅`;
+        }
+    },
+    {
+        patterns: ['מזג אויר', 'מזג', 'מה מזג האויר', 'מה מזג', 'מזג אוויר'],
+        response: `אני לא יכול לבדוק את מזג האוויר 🌤️
+אבל אני יכול לעזור לך עם:
+
+🔧 התקנות גז
+🔍 בדיקות גז
+⚙️ תיקונים
+📞 תיאום טכנאי
+
+📱 התקשר עכשיו: <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold;">053-2302248</a>`
+    },
     // ברכות ושיחת חולין
     {
-        patterns: ['היי', 'שלום', 'הי', 'אהלן', 'הלו', 'בוקר טוב', 'ערב טוב', 'צהריים טובים', 'מה נשמע', 'מה קורה', 'מה העניינים', 'מה שלומך', 'מה שלומך?', 'שלום רב'],
+        patterns: ['היי', 'שלום', 'הי', 'אהלן', 'הלו', 'בוקר טוב', 'ערב טוב', 'צהריים טובים', 'מה נשמע', 'מה קורה', 'מה העניינים', 'מה שלומך', 'שלום רב', 'שלום!', 'היי שם'],
         response: `שלום וברוכים הבאים! 👋
 
-אני העוזר הווירטואלי של שי גז, שמח לעזור לך!
-איך אפשר לסייע?
+אני העוזר הווירטואלי של שי גז - טכנאי גז מוסמך עם מעל 20 שנה ניסיון!
+שמח לעזור לך בכל נושא! 😊
 
-אתה יכול לשאול אותי על:
+💡 תוכל לשאול אותי כמעט הכל:
 🔧 שירותי גז והתקנות
 📍 אזורי שירות
-💰 מחירים והצעות מחיר
-📞 יצירת קשר
-🚨 שירות חירום`
+💰 מחירים
+🔍 בדיקות גז
+🚨 חירום
+⏰ מה השעה
+...ועוד!
+
+איך אוכל לעזור?`
     },
     {
         patterns: ['מה אתה יודע', 'מה אתה עושה', 'מי אתה', 'מה תפקידך', 'עוזר'],
@@ -270,21 +307,26 @@ function findBestResponse(userMessage) {
     for (const item of chatbotPatterns) {
         for (const pattern of item.patterns) {
             if (normalizedMessage.includes(pattern.toLowerCase())) {
-                return item.response;
+                // אם התגובה היא פונקציה, קרא לה
+                return typeof item.response === 'function' ? item.response() : item.response;
             }
         }
     }
 
     return `לא הצלחתי להבין את השאלה 🤔
 
-אתה יכול לשאול אותי על:
+💡 תוכל לשאול אותי:
 • שירותי גז והתקנות
-• אזורי שירות
+• אזורי שירות וערים
 • מחירים והצעות מחיר
 • בדיקות גז תקופתיות
-• יצירת קשר
+• מחממי מים (דודים)
+• זמינות ושעות
+• מה השעה / תאריך
+• יצירת קשר וחירום
 
-📞 או פשוט התקשר: <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold;">053-2302248</a>`;
+📞 או פשוט התקשר: <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold;">053-2302248</a>
+💬 וואצאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן</a>`;
 }
 
 function handleChatInput(event) {

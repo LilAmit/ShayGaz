@@ -1376,6 +1376,21 @@ footer a:hover {
         padding: 12px 15px;
     }
 
+    .chatbot-input-area {
+        padding: 12px;
+    }
+
+    .chatbot-input-area input {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .send-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
     .btn {
         padding: 16px 32px;
         font-size: 17px;
@@ -2123,6 +2138,63 @@ footer a:hover {
     transform: translateY(0);
 }
 
+/* Chatbot Input Area */
+.chatbot-input-area {
+    padding: 15px;
+    background: white;
+    border-top: 2px solid #e0e0e0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.chatbot-input-area input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #f5f5f5;
+}
+
+.chatbot-input-area input:focus {
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+.chatbot-input-area input::placeholder {
+    color: #999;
+}
+
+.send-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.send-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.5);
+}
+
+.send-btn:active {
+    transform: scale(0.95);
+}
+
 .typing-indicator {
     display: flex;
     gap: 4px;
@@ -2230,15 +2302,15 @@ footer a:hover {
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, #2196f3, #1976d2);
   color: white;
   border: none;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 36px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+  box-shadow: 0 5px 20px rgba(33, 150, 243, 0.5);
   z-index: 100001;
   transition: all 0.3s ease;
   display: flex;
@@ -2251,8 +2323,8 @@ footer a:hover {
 
 .accessibility-trigger:hover,
 .accessibility-trigger:focus {
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.6);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 8px 25px rgba(33, 150, 243, 0.7);
   outline: none;
 }
 
@@ -2544,13 +2616,144 @@ header a:focus-visible {
   outline-offset: 2px !important;
 }
 
+/* ===== שינוי גודל טקסט - שימוש ב-CSS Variables ===== */
+:root {
+  --text-scale: 1;
+}
+
+body.text-size-80 {
+  --text-scale: 0.8;
+}
+
+body.text-size-90 {
+  --text-scale: 0.9;
+}
+
+body.text-size-110 {
+  --text-scale: 1.1;
+}
+
+body.text-size-120 {
+  --text-scale: 1.2;
+}
+
+body.text-size-130 {
+  --text-scale: 1.3;
+}
+
+body.text-size-140 {
+  --text-scale: 1.4;
+}
+
+body.text-size-150 {
+  --text-scale: 1.5;
+}
+
+body[class*="text-size"] h1 {
+  font-size: calc(56px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] h2 {
+  font-size: calc(42px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] h3 {
+  font-size: calc(26px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] h4 {
+  font-size: calc(22px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] h5 {
+  font-size: calc(18px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] h6 {
+  font-size: calc(16px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] p,
+body[class*="text-size"] span,
+body[class*="text-size"] div,
+body[class*="text-size"] li,
+body[class*="text-size"] label {
+  font-size: calc(16px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] a {
+  font-size: calc(15px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] button,
+body[class*="text-size"] .btn {
+  font-size: calc(18px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] input,
+body[class*="text-size"] textarea,
+body[class*="text-size"] select {
+  font-size: calc(16px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .hero h1 {
+  font-size: calc(56px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .hero .subtitle {
+  font-size: calc(28px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .hero p {
+  font-size: calc(20px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .logo-title {
+  font-size: calc(22px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .logo-subtitle {
+  font-size: calc(12px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .nav-links a {
+  font-size: calc(15px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .service-card h3 {
+  font-size: calc(26px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .service-card p {
+  font-size: calc(16px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .testimonial-text {
+  font-size: calc(16px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .testimonial-author {
+  font-size: calc(18px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .contact-card h3 {
+  font-size: calc(24px * var(--text-scale)) !important;
+}
+
+body[class*="text-size"] .contact-card p {
+  font-size: calc(22px * var(--text-scale)) !important;
+}
+
+/* מסגרות לכל אלמנט כאשר קורא מסך פעיל */
+/* מסגרת ברורה לכל אלמנט עם המחלקה screen-reader-highlight */
+.screen-reader-highlight {
+  outline: 5px solid #e91e63 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 25px rgba(233, 30, 99, 0.7) !important;
+  cursor: pointer !important;
+}
+
 /* ===== מצבי נגישות - הסרת רקע כתום ===== */
-body.screen-reader-active a:hover,
-body.screen-reader-active button:hover,
-body.screen-reader-active [role="button"]:hover,
-body.screen-reader-active input:hover,
-body.screen-reader-active select:hover,
-body.screen-reader-active textarea:hover,
 body.keyboard-nav-active a:hover,
 body.keyboard-nav-active button:hover,
 body.keyboard-nav-active [role="button"]:hover,
@@ -2563,12 +2766,23 @@ body.keyboard-nav-active textarea:hover {
   cursor: pointer;
 }
 
+body.screen-reader-active h1:focus,
+body.screen-reader-active h2:focus,
+body.screen-reader-active h3:focus,
+body.screen-reader-active h4:focus,
+body.screen-reader-active h5:focus,
+body.screen-reader-active h6:focus,
+body.screen-reader-active p:focus,
+body.screen-reader-active span:focus,
+body.screen-reader-active div:focus,
+body.screen-reader-active li:focus,
 body.screen-reader-active a:focus,
 body.screen-reader-active button:focus,
-body.screen-reader-active [role="button"]:focus,
 body.screen-reader-active input:focus,
 body.screen-reader-active select:focus,
 body.screen-reader-active textarea:focus,
+body.screen-reader-active label:focus,
+body.screen-reader-active [role="button"]:focus,
 body.screen-reader-active [tabindex]:focus:not([tabindex="-1"]),
 body.keyboard-nav-active a:focus,
 body.keyboard-nav-active button:focus,
@@ -3003,9 +3217,16 @@ body.invert-colors-active .accessibility-trigger {
 
   .accessibility-trigger {
     top: 40%;
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
+    left: 10px;
+    width: 55px;
+    height: 55px;
+    font-size: 32px;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.6);
+  }
+
+  .accessibility-trigger:hover,
+  .accessibility-trigger:focus {
+    transform: translateY(-50%) scale(1.1);
   }
 
   .accessibility-panel {
