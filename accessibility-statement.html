@@ -416,41 +416,38 @@
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
         </a>
-        <button class="floating-btn chatbot-trigger" onclick="toggleChatbot()" aria-label="פתח צ'אט">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
-                <circle cx="8" cy="10" r="1.5"/>
-                <circle cx="12" cy="10" r="1.5"/>
-                <circle cx="16" cy="10" r="1.5"/>
+        <div class="floating-btn chatbot" onclick="toggleChatbot()" title="צ'אטבוט - שאל אותי שאלה" aria-label="פתח צ'אטבוט">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2 22l5.71-.97C9 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.38 0-2.68-.29-3.87-.79l-.28-.13-2.86.49.49-2.86-.13-.28C4.79 14.68 4.5 13.38 4.5 12c0-4.14 3.36-7.5 7.5-7.5s7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5zm3.5-9h-7c-.28 0-.5.22-.5.5s.22.5.5.5h7c.28 0 .5-.22.5-.5s-.22-.5-.5-.5zm0 2h-7c-.28 0-.5.22-.5.5s.22.5.5.5h7c.28 0 .5-.22.5-.5s-.22-.5-.5-.5zm-4 2h-3c-.28 0-.5.22-.5.5s.22.5.5.5h3c.28 0 .5-.22.5-.5s-.22-.5-.5-.5z"/>
             </svg>
-        </button>
+        </div>
     </div>
 
     <!-- Chatbot Window -->
     <div class="chatbot-window" id="chatbotWindow">
         <div class="chatbot-header">
-            <div class="chatbot-avatar">🤖</div>
-            <div class="chatbot-title">
-                <span>העוזר של שי גז</span>
-                <small>תמיד כאן לעזור!</small>
+            <div class="chatbot-header-content">
+                <div class="chatbot-avatar">🤖</div>
+                <div class="chatbot-title">
+                    <h3>עוזר וירטואלי</h3>
+                    <p>שאל אותי כל שאלה</p>
+                </div>
             </div>
-            <button class="chatbot-close" onclick="toggleChatbot()" aria-label="סגור צ'אט">×</button>
+            <button class="chatbot-close" onclick="toggleChatbot()">×</button>
         </div>
         <div class="chatbot-messages" id="chatbotMessages">
             <div class="chat-message bot">
                 <div class="message-avatar">🤖</div>
                 <div class="message-content">
-                    <p>שלום! 👋<br>אני העוזר הווירטואלי של שי גז.<br>איך אפשר לעזור לך היום?</p>
+                    <p>שלום וברוכים הבאים! 👋</p>
+                    <p>אני העוזר הווירטואלי של שי גז - טכנאי גז מוסמך.</p>
+                    <p>שמח לעזור בכל שאלה! איך אוכל לסייע? 😊</p>
                 </div>
             </div>
         </div>
-        <div class="chatbot-input">
-            <input type="text" id="chatbotInput" placeholder="הקלד הודעה..." onkeypress="handleChatInput(event)">
-            <button onclick="sendChatMessage()" aria-label="שלח הודעה">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                </svg>
-            </button>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbotInput" placeholder="הקלד את שאלתך כאן..." onkeypress="handleChatInput(event)" aria-label="הקלד שאלה">
+            <button onclick="sendChatMessage()" class="send-btn" aria-label="שלח הודעה">📤</button>
         </div>
     </div>
 
