@@ -773,13 +773,14 @@ footer a:hover {
     left: 30px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 14px;
     z-index: 999;
+    align-items: center;
 }
 
 .floating-btn {
-    width: 65px;
-    height: 65px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -789,6 +790,7 @@ footer a:hover {
     cursor: pointer;
     text-decoration: none;
     animation: pulse 2s infinite;
+    flex-shrink: 0;
 }
 
 @keyframes pulse {
@@ -805,27 +807,20 @@ footer a:hover {
     background: #25D366;
 }
 
-.floating-btn.phone {
-    background: var(--primary-color);
-}
-
 .floating-btn.chatbot {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .floating-btn svg {
-    width: 35px;
-    height: 35px;
+    width: 26px;
+    height: 26px;
     fill: var(--white);
 }
 
-/* Back to Top Button */
+/* Back to Top - inside floating-buttons */
 .back-to-top {
-    position: fixed;
-    bottom: 280px;
-    left: 30px;
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     background: var(--primary-color);
     color: var(--white);
     border-radius: 50%;
@@ -833,10 +828,11 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 999;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
     transition: var(--transition);
-    font-size: 24px;
+    font-size: 26px;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
 }
 
 .back-to-top.show {
@@ -845,7 +841,8 @@ footer a:hover {
 
 .back-to-top:hover {
     background: var(--secondary-color);
-    transform: translateY(-5px);
+    transform: scale(1.15) rotate(10deg);
+    animation: none;
 }
 
 /* Loading Animation */
@@ -1126,13 +1123,13 @@ footer a:hover {
 
     .floating-buttons {
         bottom: 20px;
-        left: 20px;
-        gap: 16px;
+        left: 15px;
+        gap: 12px;
     }
 
     .floating-btn {
-        width: 62px;
-        height: 62px;
+        width: 46px;
+        height: 46px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.35);
     }
 
@@ -1141,21 +1138,25 @@ footer a:hover {
     }
 
     .floating-btn svg {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
     }
 
     .back-to-top {
-        bottom: 260px;
-        left: 20px;
-        width: 58px;
-        height: 58px;
-        font-size: 28px;
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
         box-shadow: 0 8px 25px rgba(255,140,0,0.4);
     }
 
     .back-to-top:active {
         transform: scale(0.95);
+    }
+
+    .accessibility-trigger {
+        width: 46px;
+        height: 46px;
+        font-size: 22px;
     }
 
     .chatbot-window {
@@ -1358,26 +1359,30 @@ footer a:hover {
 
     .floating-buttons {
         bottom: 15px;
-        left: 15px;
-        gap: 12px;
+        left: 10px;
+        gap: 10px;
     }
 
     .floating-btn {
-        width: 56px;
-        height: 56px;
+        width: 42px;
+        height: 42px;
     }
 
     .floating-btn svg {
-        width: 28px;
-        height: 28px;
+        width: 22px;
+        height: 22px;
     }
 
     .back-to-top {
-        bottom: 230px;
-        left: 15px;
-        width: 52px;
-        height: 52px;
-        font-size: 24px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .accessibility-trigger {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
     }
 
     .chatbot-window {
@@ -2134,34 +2139,30 @@ footer a:hover {
 
 /* ===== כפתור נגישות ראשי ===== */
 .accessibility-trigger {
-  position: fixed;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   background: linear-gradient(135deg, #2196f3, #1976d2);
   color: white;
   border: none;
   border-radius: 50%;
-  font-size: 36px;
+  font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 5px 20px rgba(33, 150, 243, 0.5);
+  box-shadow: 0 5px 25px rgba(33, 150, 243, 0.5);
   z-index: 100001;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
 }
 
 .accessibility-trigger:hover,
 .accessibility-trigger:focus {
-  transform: translateY(-50%) scale(1.15);
+  transform: scale(1.15) rotate(10deg);
   box-shadow: 0 8px 25px rgba(33, 150, 243, 0.7);
   outline: none;
+  animation: none;
 }
 
 .accessibility-trigger:focus-visible {
@@ -2173,7 +2174,7 @@ footer a:hover {
 .accessibility-panel {
   position: fixed;
   top: 50%;
-  left: 70px;
+  left: 110px;
   transform: translateY(-50%) scale(0.95);
   width: 350px;
   max-height: 90vh;
@@ -3032,7 +3033,6 @@ body.invert-colors-active .accessibility-trigger {
   background: linear-gradient(135deg, #2196f3, #1976d2) !important;
   color: white !important;
   filter: none !important;
-  position: fixed !important;
   z-index: 100001 !important;
 }
 
@@ -3049,20 +3049,6 @@ body.invert-colors-active .accessibility-trigger {
 
   #skipLinks .skip-link:nth-child(3) {
     left: 320px;
-  }
-
-  .accessibility-trigger {
-    top: 40%;
-    left: 10px;
-    width: 55px;
-    height: 55px;
-    font-size: 32px;
-    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.6);
-  }
-
-  .accessibility-trigger:hover,
-  .accessibility-trigger:focus {
-    transform: translateY(-50%) scale(1.1);
   }
 
   .accessibility-panel {
