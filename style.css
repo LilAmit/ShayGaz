@@ -1714,6 +1714,65 @@ footer a:hover {
     }
 }
 
+/* Exclusions Box */
+.exclusions-box {
+    margin-top: 40px;
+    background: #fffde7;
+    border: 2px solid #f9c623;
+    border-radius: 16px;
+    padding: 28px 35px;
+}
+
+.exclusions-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.exclusions-icon {
+    font-size: 26px;
+}
+
+.exclusions-title h3 {
+    font-size: 20px;
+    color: #7a6000;
+    font-weight: 700;
+    margin: 0;
+}
+
+.exclusions-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+}
+
+.exclusions-list li {
+    font-size: 17px;
+    font-weight: 600;
+    color: #555;
+    padding: 10px 16px;
+    background: rgba(249, 198, 35, 0.15);
+    border-radius: 10px;
+    border-right: 4px solid #f9c623;
+}
+
+@media (max-width: 768px) {
+    .exclusions-box {
+        padding: 22px 20px;
+    }
+
+    .exclusions-title h3 {
+        font-size: 18px;
+    }
+
+    .exclusions-list li {
+        font-size: 16px;
+    }
+}
+
 /* Chatbot Styles */
 .floating-btn.chatbot {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
