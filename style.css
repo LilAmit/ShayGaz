@@ -1031,16 +1031,7 @@ footer a:hover {
     }
 
     .header-top {
-        padding: 6px 15px;
-    }
-
-    .header-contact-info {
-        font-size: 13px;
-        gap: 10px;
-    }
-
-    .header-phone {
-        padding: 4px 12px;
+        display: none;
     }
 
     nav {
@@ -1085,13 +1076,7 @@ footer a:hover {
     }
 
     .nav-links {
-        order: 1;
-        display: flex;
-        gap: 0;
-        width: auto;
-        padding: 0;
-        margin: 0;
-        flex-wrap: nowrap;
+        display: none;
     }
 
     .nav-desktop-only { display: none; }
