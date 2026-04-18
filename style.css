@@ -1061,9 +1061,10 @@ footer a:hover {
 
     nav {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        padding: 10px 15px;
+        position: relative;
+        padding: 10px 65px 10px 15px;
         gap: 10px;
         width: 100%;
         max-width: 100%;
@@ -1072,6 +1073,10 @@ footer a:hover {
 
     .mobile-menu-btn {
         display: flex;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
         flex-shrink: 0;
     }
 
@@ -1276,9 +1281,22 @@ footer a:hover {
     }
 
     .btn {
-        padding: 16px 32px;
-        font-size: 17px;
+        padding: 14px 24px;
+        font-size: 16px;
         box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        justify-content: center;
+        text-align: center;
+    }
+
+    .btn-call {
+        font-size: 16px;
+        padding: 14px 20px;
+        letter-spacing: 0;
+        border-width: 2px;
+    }
+
+    .btn-call::after {
+        display: none;
     }
 
     .btn:active {
@@ -1289,7 +1307,10 @@ footer a:hover {
         flex-direction: column;
         align-items: stretch;
         padding: 0 20px;
-        gap: 16px;
+        gap: 14px;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .about-content {
@@ -1522,13 +1543,19 @@ footer a:hover {
     }
 
     .btn {
-        padding: 14px 24px;
+        padding: 12px 18px;
         font-size: 15px;
+    }
+
+    .btn-call {
+        font-size: 15px;
+        padding: 12px 16px;
     }
 
     .cta-buttons {
         gap: 12px;
         padding: 0 12px;
+        max-width: 320px;
     }
 
     section div[style*="border-right"] {
