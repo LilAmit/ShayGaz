@@ -5,6 +5,39 @@ window.addEventListener('load', function() {
     }, 500);
 });
 
+// Mobile Menu
+(function() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const closeBtn = document.getElementById('mobileMenuClose');
+    const overlay = document.getElementById('mobileOverlay');
+    const menu = document.getElementById('mobileMenu');
+    if (!menuBtn || !menu) return;
+
+    function openMenu() {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMenu();
+    });
+    menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+    });
+})();
+
 // Back to top button
 window.addEventListener('scroll', function() {
     const backToTop = document.getElementById('backToTop');
