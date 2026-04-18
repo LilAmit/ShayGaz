@@ -1035,32 +1035,31 @@ footer a:hover {
     }
 
     nav {
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 48px 1fr 48px;
         align-items: center;
         padding: 10px 15px;
-        position: relative;
         gap: 0;
         width: 100%;
         max-width: 100%;
+        box-sizing: border-box;
     }
 
     .mobile-menu-btn {
         display: flex;
-        order: -1;
-        flex-shrink: 0;
+        grid-column: 1;
+        justify-self: start;
     }
 
     .logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        order: 0;
+        grid-column: 2;
+        justify-self: center;
+        position: static;
+        transform: none;
         font-size: 18px;
         padding: 6px 14px;
         gap: 8px;
         border-radius: 35px;
-        z-index: 1;
     }
 
     .logo-img {
@@ -1080,14 +1079,6 @@ footer a:hover {
     }
 
     .nav-desktop-only { display: none; }
-
-    .nav-links a {
-        font-size: 13px;
-        padding: 8px 12px;
-        white-space: nowrap;
-        font-weight: 600;
-        color: var(--text-color);
-    }
 
     .hero {
         padding: 70px 20px 60px;
