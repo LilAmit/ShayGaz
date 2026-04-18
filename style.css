@@ -1040,15 +1040,31 @@ footer a:hover {
     }
 
     .header-top {
-        display: none;
+        display: block;
+        padding: 6px 12px;
+    }
+
+    .header-contact-info {
+        font-size: 13px;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+    .header-phone {
+        padding: 3px 10px;
+        font-size: 13px;
+    }
+
+    .phone-icon {
+        font-size: 14px;
     }
 
     nav {
-        display: grid;
-        grid-template-columns: 48px 1fr 48px;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
         padding: 10px 15px;
-        gap: 0;
+        gap: 10px;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
@@ -1056,13 +1072,12 @@ footer a:hover {
 
     .mobile-menu-btn {
         display: flex;
-        grid-column: 1;
-        justify-self: start;
+        flex-shrink: 0;
     }
 
     .logo {
-        grid-column: 2;
-        justify-self: center;
+        flex: 0 1 auto;
+        margin: 0 auto;
         position: static;
         transform: none;
         font-size: 18px;
@@ -1189,36 +1204,44 @@ footer a:hover {
         gap: 12px;
     }
 
+    .floating-btn,
+    .back-to-top,
+    .accessibility-trigger {
+        width: 46px !important;
+        height: 46px !important;
+        min-width: 46px;
+        min-height: 46px;
+        padding: 0 !important;
+        box-sizing: border-box;
+    }
+
     .floating-btn {
-        width: 46px;
-        height: 46px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.35);
     }
 
-    .floating-btn:active {
+    .floating-btn:active,
+    .back-to-top:active,
+    .accessibility-trigger:active {
         transform: scale(0.95);
     }
 
     .floating-btn svg {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
 
     .back-to-top {
-        width: 46px;
-        height: 46px;
         font-size: 20px;
         box-shadow: 0 8px 25px rgba(255,140,0,0.4);
     }
 
-    .back-to-top:active {
-        transform: scale(0.95);
+    .accessibility-trigger {
+        font-size: 20px;
     }
 
-    .accessibility-trigger {
-        width: 46px;
-        height: 46px;
-        font-size: 22px;
+    .accessibility-trigger i {
+        font-size: 20px;
+        line-height: 1;
     }
 
     .chatbot-window {
@@ -1425,26 +1448,29 @@ footer a:hover {
         gap: 10px;
     }
 
-    .floating-btn {
-        width: 42px;
-        height: 42px;
+    .floating-btn,
+    .back-to-top,
+    .accessibility-trigger {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px;
+        min-height: 42px;
+        padding: 0 !important;
     }
 
     .floating-btn svg {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
     }
 
     .back-to-top {
-        width: 42px;
-        height: 42px;
         font-size: 18px;
     }
 
-    .accessibility-trigger {
-        width: 42px;
-        height: 42px;
-        font-size: 20px;
+    .accessibility-trigger,
+    .accessibility-trigger i {
+        font-size: 18px;
+        line-height: 1;
     }
 
     .chatbot-window {
