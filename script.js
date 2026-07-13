@@ -334,6 +334,17 @@ function toggleChatbot() {
     }
 }
 
+// סגירת הצ'אטבוט בלחיצה בכל מקום אחר במסך (מובייל ומחשב)
+document.addEventListener('click', function(e) {
+    const chatbot = document.getElementById('chatbotWindow');
+    if (!chatbot || !chatbot.classList.contains('active')) return;
+
+    // אל תסגור אם לחצו בתוך חלון הצ'אטבוט או על כפתור הצ'אטבוט הצף
+    if (chatbot.contains(e.target) || e.target.closest('.floating-btn.chatbot')) return;
+
+    chatbot.classList.remove('active');
+});
+
 function findBestResponse(userMessage) {
     const normalizedMessage = userMessage.toLowerCase().trim();
 

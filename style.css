@@ -195,6 +195,7 @@ nav {
     align-items: center;
     padding: 15px 30px;
     gap: 12px;
+    position: relative;
 }
 
 .logo {
@@ -280,9 +281,12 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     list-style: none;
     flex-wrap: wrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -292,9 +296,15 @@ nav {
     transition: var(--transition);
     font-size: 15px;
     position: relative;
-    padding: 10px 18px;
+    padding: 10px 22px;
     border-radius: 25px;
     background: transparent;
+    border: 2px solid rgba(255, 140, 0, 0.45);
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    border-color: var(--primary-color);
 }
 
 .nav-links a::before {
@@ -1917,14 +1927,21 @@ footer a:hover {
     background: white;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    display: none;
+    display: flex;
     flex-direction: column;
     z-index: 10000;
     overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transform-origin: bottom left;
+    transition: all 0.3s ease;
 }
 
 .chatbot-window.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
 }
 
 .chatbot-header {
