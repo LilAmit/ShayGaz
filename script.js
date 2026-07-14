@@ -191,12 +191,12 @@ const chatbotPatterns = [
     },
     // יצירת קשר
     {
-        patterns: ['קשר', 'טלפון', 'להתקשר', 'וואצאפ', 'ווצאפ', 'whatsapp', 'מספר', 'פניה', 'דבר עם', 'לדבר'],
+        patterns: ['קשר', 'טלפון', 'להתקשר', 'וואטסאפ', 'וואצאפ', 'ווצאפ', 'whatsapp', 'מספר', 'פניה', 'דבר עם', 'לדבר'],
         response: `ניתן ליצור קשר בכמה דרכים:
 
 📞 טלפון: <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold;">053-2302248 ← לחץ להתקשר</a>
 
-💬 וואצאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן לשליחת הודעה ←</a>
+💬 וואטסאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן לשליחת הודעה ←</a>
 
 ⏰ זמינים 24/7 - גם בשבת ובחגים!
 🚀 מענה מהיר תוך דקות!`
@@ -214,7 +214,7 @@ const chatbotPatterns = [
 📞 להצעת מחיר ללא התחייבות:
 <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold;">053-2302248</a>
 
-💬 או בוואצאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן</a>`
+💬 או בוואטסאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן</a>`
     },
     // בדיקות גז
     {
@@ -307,7 +307,7 @@ const chatbotPatterns = [
 אם יש עוד שאלות - אני כאן.
 
 📞 לשירות מיידי: <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold;">053-2302248</a>
-💬 וואצאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן</a>
+💬 וואטסאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן</a>
 
 יום נעים! ☀️`
     },
@@ -370,7 +370,7 @@ function findBestResponse(userMessage) {
 • יצירת קשר וחירום
 
 📞 או פשוט התקשר: <a href="tel:053-2302248" style="color: #FFD700; font-weight: bold;">053-2302248</a>
-💬 וואצאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן</a>`;
+💬 וואטסאפ: <a href="https://wa.me/972532302248" target="_blank" style="color: #25D366; font-weight: bold;">לחץ כאן</a>`;
 }
 
 function handleChatInput(event) {

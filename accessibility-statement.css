@@ -28,7 +28,7 @@
 }
 
 .accessibility-statement-content ul li {
-    padding: 10px 0 10px 30px;
+    padding: 10px 30px 10px 0;
     position: relative;
 }
 
@@ -100,6 +100,31 @@
     border-radius: 4px;
     font-family: monospace;
     font-size: 13px;
+}
+
+/* ===== טבלת קיצורי מקלדת - macOS (כחול) ===== */
+.mac-shortcuts-title {
+    color: #1976d2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.keyboard-shortcuts-mac {
+    background: #eaf3fc;
+}
+
+.keyboard-shortcuts-mac th {
+    background: #2196f3;
+    color: white;
+}
+
+.keyboard-shortcuts-mac kbd {
+    background: #1976d2;
+    color: white;
+    display: inline-block;
+    direction: ltr;
+    unicode-bidi: isolate;
 }
 
 .contact-accessibility {
